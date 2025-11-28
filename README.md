@@ -48,8 +48,12 @@ This project is focus on cleaning excel messey dataset Cafe Sales. The goal was 
 - Formula: =E2*G2
 - Logic: Calculates Total Spent as Cleaned Price Per Unit × Cleaned Quantity.
 
-### 6. Total Spent
+### 6. Payment Method & Location
 - Replaced invalid or empty entries with "N/A" to standardize missing values.
 
-### 7. Total Spent
+### 7. Transaction Date
 - Filled blank or invalid dates with the placeholder date "1900-01-01"
+
+## Final Result
+
+**After completing all cleaning steps, the dataset is now clean, consistent, and ready for analysis.Invalid values were fixed or replaced, numbers were recalculated when needed, and all text and date fields were standardized.The cleaned dataset can now be used confidently for reporting, pivot tables, dashboards, or any further analysis.**
