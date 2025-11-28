@@ -35,5 +35,7 @@ This project is focus on cleaning excel messey dataset Cafe Sales. The goal was 
     ),
     $E2)
 - **Logic**:
-  - Replaces invalid prices with the correct value from the lookup table based on Cleaned_Item. 
-  - If no lookup value is found, calculates price as Total Spent ÷ Quantity. Valid prices are left unchanged.
+  - Valid prices are left unchanged. Replaces invalid prices with the correct value from the lookup table based on Cleaned_Item.
+  - If no lookup value is found, calculates price as Total Spent ÷ Quantity. 
+  - Returns 0 when calculation is not possible.
+  - **Manual corrections:** 3 rows that still had errors after applying the formula were manually filled zero to make sure all prices are valid for analysis.
