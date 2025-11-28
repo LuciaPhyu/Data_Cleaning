@@ -47,3 +47,9 @@ This project is focus on cleaning excel messey dataset Cafe Sales. The goal was 
 - Added a column **Cleaned_Total_Spent**.
 - Formula: =E2*G2
 - Logic: Calculates Total Spent as Cleaned Price Per Unit × Cleaned Quantity.
+
+### 6. Total Spent
+- Replaced invalid or empty entries with "N/A" to standardize missing values.
+
+### 7. Total Spent
+- Filled blank or invalid dates with the placeholder date "1900-01-01"
