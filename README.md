@@ -23,11 +23,12 @@ This project is focus on cleaning excel messey dataset Cafe Sales. The goal was 
 - Formula:
   =IF(OR($B2="Unknown",$B2="Error",$B2=""),IFERROR(VLOOKUP($E2, UnitPrice_Lookup!$F$3:$G$10,2,FALSE),"N/A"),$B2)
 - Logic:
-  To replace invalid items with a lookup value based on Price Per Unit or "N/A" if not found; keeps valid items unchanged.
+  Replace invalid items with a lookup value based on Price Per Unit or "N/A" if not found; keeps valid items unchanged.
 
 ### 3. Price Per Unit
 - Inserted a new column **`Cleaned Price Per Unit`** to handle invalid entries.
 - Used the formula:
   =IF(Or($E2="ERROR",$E2="UNKNOWN",$E2=""),IFERROR(VLOOKUP($C2,UnitPrice_Lookup!$E$3:$F$10,2,0),G2/D2),$E2)
 - **Logic**:
-  If the original price is "ERROR", "UNKNOWN", or blank, the formula automatically looks up the correct unit price from a reference table based on the item. Otherwise, it keeps the original value.
+  - Replaces invalid prices with the correct value from the lookup table based on Cleaned_Item. 
+  - If no lookup value is found, calculates price as Total Spent ÷ Quantity. Valid prices are left unchanged.
