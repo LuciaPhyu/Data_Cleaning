@@ -42,3 +42,8 @@ This project is focus on cleaning excel messey dataset Cafe Sales. The goal was 
 - Logic:
   - Invalid or missing quantities (ERROR, UNKNOWN, or blank) are replaced with a calculated value: Total Spent ÷ Price Per Unit. If the calculation isn’t possible, the value is set to 0.
   - Valid quantities remain unchanged.
+
+### 5. Total Spent
+- Added a column **Cleaned_Total_Spent**.
+- Formula: =E2*G2
+- Logic: Calculates Total Spent as Cleaned Price Per Unit × Cleaned Quantity.
