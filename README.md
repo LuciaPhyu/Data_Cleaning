@@ -19,8 +19,11 @@ This project is focus on cleaning excel messey dataset Cafe Sales. The goal was 
 - Checked for duplicates
 
 ### 2. Item
-- Inserted a new column Cleaned_Item.
-- Used an ** =IF(or(B3="Unknown",B3="Error", B3=""),"N/A",B3) ** formula to replace invalid entries ("UNKNOWN", "ERROR", and blank cells) with N/A.
+- Inserted a new column **`Cleaned_Item`** to fix invalid entries in the Item column.
+- Formula:
+  =IF(OR($B2="Unknown",$B2="Error",$B2=""),IFERROR(VLOOKUP($E2, UnitPrice_Lookup!$F$3:$G$10,2,FALSE),"N/A"),$B2)
+- Logic:
+  To replace invalid items with a lookup value based on Price Per Unit or "N/A" if not found; keeps valid items unchanged.
 
 ### 3. Quantity
 - Inserted a new column Price_Cleaned to handle invalid entries.
