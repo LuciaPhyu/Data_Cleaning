@@ -34,3 +34,11 @@ This project is focus on cleaning excel messey dataset Cafe Sales. The goal was 
   - If no lookup value is found, calculates price as Total Spent ÷ Quantity. 
   - Returns 0 when calculation is not possible.
   - **Manual corrections:** 2 rows that still had errors after applying the formula were manually filled zero to make sure all prices are valid for analysis.
+
+### 4. Quantity
+- Added a new column **`Cleaned_Quantity`** to clean invalid or missing values in Quantity column.
+- Formula used:
+  =IF(OR($D2="ERROR",$D2="UNKNOWN",$D2=""),IFERROR(H2/G2,0),D2)
+- Logic:
+  - Invalid or missing quantities (ERROR, UNKNOWN, or blank) are replaced with a calculated value: Total Spent ÷ Price Per Unit. If the calculation isn’t possible, the value is set to 0.
+  - Valid quantities remain unchanged.
