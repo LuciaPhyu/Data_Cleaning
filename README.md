@@ -16,7 +16,7 @@ This project is focus on cleaning excel messey dataset Cafe Sales. The goal was 
 
 ## Data Cleaning Steps
 ### 1. Transaction ID
-- Checked for duplicates
+- Checked for duplicates and found no duplicates. No more action required.
 
 ### 2. Item
 - Inserted a new column **`Cleaned_Item`** to fix invalid entries in the Item column.
@@ -25,9 +25,9 @@ This project is focus on cleaning excel messey dataset Cafe Sales. The goal was 
 - Logic:
   To replace invalid items with a lookup value based on Price Per Unit or "N/A" if not found; keeps valid items unchanged.
 
-### 3. Quantity
-- Inserted a new column Price_Cleaned to handle invalid entries.
+### 3. Price Per Unit
+- Inserted a new column **`Cleaned Price Per Unit`** to handle invalid entries.
 - Used the formula:
-  =IF(OR(E3="ERROR", E3="UNKNOWN", E3=""), VLOOKUP(C3, UnitPrice_Lookup!$E$3:$F$10, 2, 0), E3)
+  =IF(Or($E2="ERROR",$E2="UNKNOWN",$E2=""),IFERROR(VLOOKUP($C2,UnitPrice_Lookup!$E$3:$F$10,2,0),G2/D2),$E2)
 - **Logic**:
   If the original price is "ERROR", "UNKNOWN", or blank, the formula automatically looks up the correct unit price from a reference table based on the item. Otherwise, it keeps the original value.
